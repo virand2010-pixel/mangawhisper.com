@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whisper-world-andrea.proud-guppy-7701.chatgpt.site/sitemap.xml
