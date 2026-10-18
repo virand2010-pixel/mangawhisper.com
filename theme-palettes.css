@@ -1,0 +1,235 @@
+/* Three palettes, one r10 composition. Blue is theme-adventure.css unchanged.
+   This layer changes colors only: no artwork, dimensions, position, type,
+   animation, opacity, gradient stops, or shadow geometry. */
+
+html[data-theme="dark"]{
+ --ink:#f2ede3;--paper:#111b27;--gold:#e8c47b;--sky:#152536;
+ --muted:#b7c2ce;--blue:#91b4ef;--deep-blue:#0c1520;--line:#3a4b5e;
+ --panel:#192737;--night:#0c1520;color-scheme:dark
+}
+html[data-theme="dark"]::selection{background-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] :is(button,a,[tabindex],summary):focus-visible{outline-color:var(--gold)}
+html[data-theme="dark"] .skip-link{background-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .site-header{background-color:#101925;border-color:var(--line)}
+html[data-theme="dark"] .logo-crop{background-color:#fff9e9}
+html[data-theme="dark"] .site-header nav a:hover{border-color:var(--gold)}
+html[data-theme="dark"] .site-header nav a[aria-current="location"]{color:var(--gold);border-bottom-color:var(--gold)}
+html[data-theme="dark"] .site-header .nav-guild{background-color:#192737;color:var(--gold);border-color:#8e7951}
+html[data-theme="dark"] .site-header .nav-guild:hover{background-color:#25303b}
+html[data-theme="dark"] .site-header nav .nav-guild[aria-current="location"]{color:var(--gold);border-color:#8e7951}
+html[data-theme="dark"] .menu-toggle{background-color:var(--panel);border-color:#627184}
+html[data-theme="dark"] .hero{background-color:#101925}
+html[data-theme="dark"] .hero-scene:after{background-image:linear-gradient(90deg,#101925 10%,transparent 48%),linear-gradient(0deg,#101925,transparent 24%)}
+html[data-theme="dark"] .hero-caption{color:var(--ink)}
+html[data-theme="dark"] .hero-copy{color:#e0e5e9}
+html[data-theme="dark"] .hero .text-link{color:var(--ink);border-color:#a9b7c880}
+html[data-theme="dark"] .hero .text-link:hover{color:var(--gold)}
+html[data-theme="dark"] .hero-signoff{border-color:var(--line)}
+html[data-theme="dark"] .hero-signoff .hero-footnote{color:var(--muted)}
+html[data-theme="dark"] .author-stamp{background-color:#101925ed;border-color:#8e7951;color:#e0e5e9}
+html[data-theme="dark"] .art-launch{background-color:#111b27f5;border-color:#9aa7b5;color:var(--ink)}
+html[data-theme="dark"] .primary{background-color:var(--gold);border-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .button[href]:hover{background-color:#f4d79d;color:var(--night)}
+html[data-theme="dark"] .button[aria-disabled="true"]{background-color:#344050;border-color:#627184;color:#bac7d2}
+html[data-theme="dark"] .text-link:hover,
+html[data-theme="dark"] .edition-button:hover{color:var(--gold)}
+html[data-theme="dark"] .chapter-ribbon{background-color:#152130;color:#d1d9df}
+html[data-theme="dark"] .eyebrow,
+html[data-theme="dark"] .section-heading h2 em,
+html[data-theme="dark"] .section-top h2 em,
+html[data-theme="dark"] .collection-heading h3 em,
+html[data-theme="dark"] .creator-heading h2 em{color:var(--gold)}
+html[data-theme="dark"] .section-spark{color:var(--gold)}
+html[data-theme="dark"] .read-section{background-color:var(--paper)}
+html[data-theme="dark"] .reading-heading-top{border-color:var(--line)}
+html[data-theme="dark"] .language-option{background-color:var(--panel);border-color:#627184}
+html[data-theme="dark"] .language-option strong,
+html[data-theme="dark"] .language-code{color:var(--ink)}
+html[data-theme="dark"] .language-option small{color:var(--muted)}
+html[data-theme="dark"] .language-option[href]:hover{background-color:#28394b;border-color:var(--gold)}
+html[data-theme="dark"] .language-option[aria-disabled="true"]{background-color:#18222e;border-color:#465361;color:#a8b4c1}
+html[data-theme="dark"] .language-option[aria-disabled="true"] :is(strong,small,.language-code){color:#a8b4c1}
+html[data-theme="dark"] .status-dot{background-color:var(--gold)}
+html[data-theme="dark"] .reading-preview{background-color:var(--panel);border-color:var(--line)}
+html[data-theme="dark"] .reading-preview>img{border-color:#708194}
+html[data-theme="dark"] .reading-preview strong{color:var(--gold)}
+html[data-theme="dark"] .reading-preview:hover,
+html[data-theme="dark"] .reading-preview:focus-visible{background-color:#25364a}
+html[data-theme="dark"] .editions-section{background-color:#141f2c;border-color:var(--line)}
+html[data-theme="dark"] .gallery-controls button{background-color:#243346;border-color:#768494;color:var(--ink)}
+html[data-theme="dark"] .gallery-controls button:not(:disabled):hover{background-color:var(--gold);border-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .gallery-segments span{background-color:#526073}
+html[data-theme="dark"] .gallery-segments .is-current{background-color:var(--gold)}
+html[data-theme="dark"] .edition-track,
+html[data-theme="dark"] .collectible-track{scrollbar-color:#9e8a61 #0c1520}
+html[data-theme="dark"] .edition-card,
+html[data-theme="dark"] .collectible-card,
+html[data-theme="dark"] .merch-card{background-color:var(--panel);border-color:var(--line)}
+html[data-theme="dark"] .edition-visual,
+html[data-theme="dark"] .variant-one .edition-visual,
+html[data-theme="dark"] .variant-two .edition-visual{background-color:#203144;border-color:var(--line)}
+html[data-theme="dark"] .edition-visual:before{background-image:radial-gradient(#f2ede324 .8px,transparent .8px)}
+html[data-theme="dark"] .edition-number{color:#f2ede310}
+html[data-theme="dark"] .edition-tag{background-color:#152130;color:var(--gold);border-color:#8e7951}
+html[data-theme="dark"] .edition-info .eyebrow,
+html[data-theme="dark"] .collectible-copy .eyebrow,
+html[data-theme="dark"] .merch-card .eyebrow{color:#c2ad81}
+html[data-theme="dark"] .edition-button{border-color:var(--line);color:var(--muted)}
+html[data-theme="dark"] .edition-shop{background-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .edition-shop:hover{background-color:#f4d79d;color:var(--night)}
+html[data-theme="dark"] .edition-shop[aria-disabled="true"]{background-color:#344050;color:#bac7d2}
+html[data-theme="dark"] .collection-expansion,
+html[data-theme="dark"] .collection-label,
+html[data-theme="dark"] .french-feature{border-color:var(--line)}
+html[data-theme="dark"] .collectible-art{background-color:#111b27}
+html[data-theme="dark"] .collectible-zoom{background-color:var(--panel);border-color:var(--line)}
+html[data-theme="dark"] .collectible-art:hover .collectible-zoom{background-color:#2a3b4e;color:var(--gold)}
+html[data-theme="dark"] .collectible-art:focus-visible .collectible-zoom{background-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .french-feature>button{background-color:#1b3046;border-color:var(--line)}
+html[data-theme="dark"] .french-feature .eyebrow{color:var(--gold)}
+html[data-theme="dark"] .world-section{background-color:#111e2b;background-image:radial-gradient(#e8c47b0d .8px,transparent .8px);color:var(--ink)}
+html[data-theme="dark"] .world-heading .section-intro{color:#d7dfe6}
+html[data-theme="dark"] .world-companions{border-color:var(--line)}
+html[data-theme="dark"] .world-companion:after{background-color:#02091444}
+html[data-theme="dark"] .lore-tabbar button{background-color:#192737;border-color:#627184;color:var(--ink)}
+html[data-theme="dark"] .lore-tabbar button:hover{background-color:#28394b;border-color:var(--gold)}
+html[data-theme="dark"] .lore-tabbar [aria-selected="true"],
+html[data-theme="dark"] .lore-tabbar [aria-selected="true"]:hover{background-color:var(--gold);border-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .lore-panel{background-color:var(--panel);color:var(--ink);border-color:var(--line)}
+html[data-theme="dark"] .lore-art{border-color:var(--line)}
+html[data-theme="dark"] .lore-caption h3{color:var(--gold)}
+html[data-theme="dark"] .lore-caption p:not(.eyebrow){color:#d1d9e0}
+html[data-theme="dark"] .zoom-label{background-color:#101925f5;border-color:#718094;color:var(--ink)}
+html[data-theme="dark"] .lore-art:hover .zoom-label,
+html[data-theme="dark"] .lore-art:focus-visible .zoom-label{background-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .world-section .lore-panel :focus-visible{outline-color:var(--gold)}
+html[data-theme="dark"] .creator-section{background-color:#141f2c}
+html[data-theme="dark"] .creator-copy{border-color:var(--line)}
+html[data-theme="dark"] .creator-social{background-color:#192737;border-color:#8e7951;color:var(--gold)}
+html[data-theme="dark"] .creator-social[href]:hover{background-color:#253549;color:var(--gold)}
+html[data-theme="dark"] .social-link{border-color:#627184}
+html[data-theme="dark"] .social-link:hover{border-color:var(--gold);color:var(--gold)}
+html[data-theme="dark"] .guild-section{background-color:#0d1825;background-image:radial-gradient(ellipse at 90% 65%,#21374c,transparent 65%);color:var(--ink)}
+html[data-theme="dark"] .guild-content .section-intro{color:#d7dfe6}
+html[data-theme="dark"] .guild-signup .button,
+html[data-theme="dark"] .guild-signup .button[aria-disabled="true"]{background-color:var(--gold);border-color:var(--gold);color:var(--night)}
+html[data-theme="dark"] .guild-signup .button[href]:hover{background-color:#f4d79d;color:var(--night)}
+html[data-theme="dark"] .guild-signup p,
+html[data-theme="dark"] .guild-socials p{color:#bac7d2}
+html[data-theme="dark"] .guild-socials{border-color:var(--line)}
+html[data-theme="dark"] .guild-socials .social-link{border-color:#627184}
+html[data-theme="dark"] .guild-socials .social-link:hover{border-color:var(--gold);color:var(--gold)}
+html[data-theme="dark"] .site-footer{background-color:var(--night)}
+html[data-theme="dark"] dialog{background-color:var(--panel);color:var(--ink);border-color:#82909e}
+html[data-theme="dark"] dialog::backdrop{background-color:#050b13e8}
+html[data-theme="dark"] .dialog-close,
+html[data-theme="dark"] .art-gallery-toolbar button{background-color:#203144;border-color:#82909e;color:var(--ink)}
+html[data-theme="dark"] .dialog-close:hover{background-color:#2d4056}
+html[data-theme="dark"] .dialog-notice{background-color:#233244;border-left-color:var(--gold);color:#d4dce3}
+html[data-theme="dark"] .art-gallery-toolbar button:hover{background-color:var(--gold);color:var(--night)}
+
+/* Initial light direction: warm paper, gold, pale blue and dark ink. */
+html[data-theme="light"]{
+ --ink:#152536;--paper:#fff7df;--gold:#ffd13d;--sky:#dff3fa;
+ --muted:#4b5e6a;--blue:#1478a2;--deep-blue:#152536;--line:#bdc6c7;
+ color-scheme:light
+}
+html[data-theme="light"] .site-header{background-color:var(--paper);border-color:var(--line)}
+html[data-theme="light"] .site-header nav .nav-guild[aria-current="location"]{color:#fff;border-color:var(--blue)}
+html[data-theme="light"] .menu-toggle{background-color:#fffdf5;border-color:#839098}
+html[data-theme="light"] .hero{background-color:var(--paper)}
+html[data-theme="light"] .hero-scene:after{background-image:linear-gradient(90deg,#fff7df 10%,transparent 48%),linear-gradient(0deg,#fff7df,transparent 24%)}
+html[data-theme="light"] .hero-caption{color:var(--ink)}
+html[data-theme="light"] .hero-caption .eyebrow,
+html[data-theme="light"] .hero h1 em{color:#8b3519}
+html[data-theme="light"] .hero-copy{color:#435464}
+html[data-theme="light"] .hero .text-link{color:var(--ink);border-color:#53616b80}
+html[data-theme="light"] .hero .text-link:hover{color:#8b3519}
+html[data-theme="light"] .hero-signoff{border-color:#53616b40}
+html[data-theme="light"] .hero-signoff .hero-footnote{color:var(--muted)}
+html[data-theme="light"] .author-stamp{background-color:#fff7dfed;border-color:#839098;color:var(--ink)}
+html[data-theme="light"] .author-stamp strong{color:#8b3519}
+html[data-theme="light"] .art-launch{background-color:#fff7dff5;border-color:#839098;color:var(--ink)}
+html[data-theme="light"] .hero :focus-visible{outline-color:var(--blue)}
+html[data-theme="light"] .button[href]:hover{background-color:#ffe787;color:var(--ink)}
+html[data-theme="light"] .button[aria-disabled="true"]{background-color:#e8dfbf;color:#53616b;border-color:#989d96}
+html[data-theme="light"] .chapter-ribbon{background-color:var(--ink);color:var(--paper)}
+html[data-theme="light"] .read-section{background-color:var(--gold)}
+html[data-theme="light"] .read-section .eyebrow,
+html[data-theme="light"] .section-heading h2 em{color:var(--ink)}
+html[data-theme="light"] .reading-heading-top{border-color:#15253655}
+html[data-theme="light"] .section-spark{color:#8b3519}
+html[data-theme="light"] .language-option{background-color:var(--paper);border-color:#839098}
+html[data-theme="light"] .language-option[href]:hover{background-color:#fffdf5;border-color:var(--ink)}
+html[data-theme="light"] .language-option[aria-disabled="true"]{background-color:#efe9d9;border-color:#989d96;color:var(--muted)}
+html[data-theme="light"] .language-option[aria-disabled="true"] :is(strong,small,.language-code){color:var(--muted)}
+html[data-theme="light"] .reading-preview{background-color:var(--paper);border-color:#839098}
+html[data-theme="light"] .reading-preview>img{border-color:#839098}
+html[data-theme="light"] .reading-preview:hover,
+html[data-theme="light"] .reading-preview:focus-visible{background-color:#fffdf5}
+html[data-theme="light"] .editions-section{background-color:var(--paper);border-color:var(--line)}
+html[data-theme="light"] .gallery-controls button{background-color:#fffdf5;border-color:#839098}
+html[data-theme="light"] .edition-track,
+html[data-theme="light"] .collectible-track{scrollbar-color:#839098 #eee8d5}
+html[data-theme="light"] .edition-card,
+html[data-theme="light"] .collectible-card,
+html[data-theme="light"] .merch-card{background-color:#fffdf5;border-color:var(--line)}
+html[data-theme="light"] .edition-visual,
+html[data-theme="light"] .variant-two .edition-visual{background-color:var(--gold);border-color:var(--line)}
+html[data-theme="light"] .variant-one .edition-visual{background-color:var(--sky);border-color:var(--line)}
+html[data-theme="light"] .edition-visual:before{background-image:radial-gradient(#15253624 .8px,transparent .8px)}
+html[data-theme="light"] .edition-number{color:#15253610}
+html[data-theme="light"] .edition-tag{background-color:var(--paper);border-color:#839098;color:var(--ink)}
+html[data-theme="light"] .collection-expansion,
+html[data-theme="light"] .collection-label,
+html[data-theme="light"] .french-feature{border-color:var(--line)}
+html[data-theme="light"] .collectible-art{background-color:var(--sky)}
+html[data-theme="light"] .collectible-zoom{background-color:#fffdf5;border-color:var(--line)}
+html[data-theme="light"] .collectible-art:hover .collectible-zoom{background-color:#e9f5f9;color:var(--blue)}
+html[data-theme="light"] .french-feature>button{background-color:var(--sky);border-color:var(--line)}
+html[data-theme="light"] .world-section{background-color:var(--sky);background-image:radial-gradient(#1525360d .8px,transparent .8px);color:var(--ink)}
+html[data-theme="light"] .world-heading .eyebrow,
+html[data-theme="light"] .world-heading h2 em{color:#8b3519}
+html[data-theme="light"] .world-heading .section-intro{color:#435464}
+html[data-theme="light"] .world-companions{border-color:#53616b50}
+html[data-theme="light"] .world-companion:after{background-color:#15253622}
+html[data-theme="light"] .lore-tabbar button{background-color:#fff7df80;border-color:#839098;color:var(--ink)}
+html[data-theme="light"] .lore-tabbar button:hover{background-color:#fffdf5;border-color:var(--ink)}
+html[data-theme="light"] .lore-tabbar [aria-selected="true"],
+html[data-theme="light"] .lore-tabbar [aria-selected="true"]:hover{background-color:var(--gold);border-color:var(--ink);color:var(--ink)}
+html[data-theme="light"] .lore-panel{background-color:var(--paper);color:var(--ink)}
+html[data-theme="light"] .lore-art{border-color:var(--line)}
+html[data-theme="light"] .zoom-label{background-color:#fff7dff5;border-color:#839098;color:var(--ink)}
+html[data-theme="light"] .world-section :focus-visible{outline-color:var(--blue)}
+html[data-theme="light"] .creator-copy{border-color:var(--line)}
+html[data-theme="light"] .social-link{border-color:#839098}
+html[data-theme="light"] .guild-section{background-color:var(--deep-blue);background-image:radial-gradient(ellipse at 90% 65%,#2e475a,transparent 65%);color:var(--paper)}
+html[data-theme="light"] .guild-content .section-intro{color:#e4edf1}
+html[data-theme="light"] .guild-signup .button,
+html[data-theme="light"] .guild-signup .button[aria-disabled="true"]{background-color:var(--gold);border-color:var(--gold);color:var(--ink)}
+html[data-theme="light"] .guild-signup .button[href]:hover{background-color:#ffe787;color:var(--ink)}
+html[data-theme="light"] .guild-signup p,
+html[data-theme="light"] .guild-socials p{color:#cbd7df}
+html[data-theme="light"] .guild-socials{border-color:#cbd7df40}
+html[data-theme="light"] .guild-socials .social-link{border-color:#cbd7df80}
+html[data-theme="light"] .guild-socials .social-link:hover{border-color:var(--gold);color:var(--gold)}
+html[data-theme="light"] dialog{background-color:var(--paper);border-color:#839098}
+html[data-theme="light"] dialog::backdrop{background-color:#152536df}
+html[data-theme="light"] .dialog-close,
+html[data-theme="light"] .art-gallery-toolbar button{background-color:#fffdf5;border-color:#839098}
+html[data-theme="light"] .dialog-close:hover{background-color:#dff3fa}
+html[data-theme="light"] .dialog-notice{background-color:#dff3fa;border-left-color:var(--blue)}
+
+/* Recolor the existing r10 gradient at its original responsive stops. */
+@media(max-width:800px){
+ html[data-theme="dark"] .site-header nav{background-color:#101925;border-color:var(--line)}
+ html[data-theme="dark"] .hero-scene:after{background-image:linear-gradient(90deg,#101925f5 0%,#101925d9 48%,#10192544 85%,transparent),linear-gradient(0deg,#101925,transparent 65%)}
+ html[data-theme="light"] .site-header nav{background-color:var(--paper);border-color:var(--line)}
+ html[data-theme="light"] .hero-scene:after{background-image:linear-gradient(90deg,#fff7dff5 0%,#fff7dfd9 48%,#fff7df44 85%,transparent),linear-gradient(0deg,#fff7df,transparent 65%)}
+}
+@media(max-width:560px){
+ html[data-theme="dark"] .hero-scene:after{background-image:linear-gradient(0deg,#101925 14%,transparent 38%)}
+ html[data-theme="dark"] .hero-actions .text-link{background-color:#ffffff0a;border-color:#a9b7c880}
+ html[data-theme="light"] .hero-scene:after{background-image:linear-gradient(0deg,#fff7df 14%,transparent 38%)}
+ html[data-theme="light"] .hero-actions .text-link{background-color:#1525360a;border-color:#53616b80}
+}

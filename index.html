@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whisper — Join the Reader's Guild</title>
+  <style>
+    :root {
+      --bg-color: #0b1118;
+      --card-bg: rgba(18, 27, 40, 0.90);
+      --text-main: #f0f4f8;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --accent-hover: #d97706;
+      --border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* --- CAMPO DI RUNE FLUTTUANTI (PIÙ NUMEROSE) --- */
+    .rune-field {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .floating-rune {
+      position: absolute;
+      color: rgba(245, 158, 11, 0.28);
+      animation: floatRune 9s ease-in-out infinite;
+    }
+
+    .rune-1 { top: 8%; left: 6%; width: 32px; animation-delay: 0s; }
+    .rune-2 { top: 85%; left: 10%; width: 42px; animation-delay: 2s; }
+    .rune-3 { top: 12%; right: 8%; width: 38px; animation-delay: 1.5s; }
+    .rune-4 { top: 80%; right: 7%; width: 46px; animation-delay: 3.5s; }
+    .rune-5 { top: 45%; left: 3%; width: 30px; animation-delay: 1s; }
+    .rune-6 { top: 35%; right: 4%; width: 35px; animation-delay: 4s; }
+
+    @keyframes floatRune {
+      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
+      50% { transform: translateY(-15px) rotate(12deg); opacity: 0.55; }
+    }
+
+    /* --- WISP / COMPANION MULTIPLI E ANIMATI INTORNO --- */
+    .companion-wisp {
+      position: absolute;
+      width: 65px;
+      height: auto;
+      animation: floatWisp 6s ease-in-out infinite;
+      z-index: 1;
+      filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.4));
+    }
+    .wisp-1 { top: 10%; left: 15%; animation-delay: 0s; width: 60px; }
+    .wisp-2 { top: 22%; right: 14%; animation-delay: 1.8s; width: 70px; }
+    .wisp-3 { bottom: 14%; left: 16%; animation-delay: 3.2s; width: 75px; }
+    .wisp-4 { bottom: 18%; right: 15%; animation-delay: 1.2s; width: 65px; }
+
+    @keyframes floatWisp {
+      0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+      50% { transform: translateY(-14px) scale(1.05) rotate(3deg); }
+    }
+
+    /* --- CONTAINER PRINCIPALE --- */
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 380px;
+      background: var(--card-bg);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.18);
+    }
+
+    .logo {
+      max-width: 130px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 1rem;
+      background: rgba(11, 17, 24, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input[type="email"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 14px rgba(245, 158, 11, 0.3);
+    }
+
+    .cta-button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: var(--accent);
+      color: #0b1118;
+      transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    }
+
+    .cta-button:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .cta-button:active {
+      transform: scale(0.98);
+    }
+
+    .note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    #status-message {
+      font-size: 0.85rem;
+      margin-top: 12px;
+      min-height: 20px;
+    }
+
+    .ml-embedded-hidden {
+      display: none !important;
+    }
+  </style>
+
+  <!-- Script MailerLite Universal -->
+  <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments)},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);
+    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2651348');
+  </script>
+</head>
+<body>
+
+  <!-- Campo Rune Norrene (Più abbondanti e luminose) -->
+  <div class="rune-field" aria-hidden="true">
+    <svg class="floating-rune rune-1" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 36V4M3 10l9 11 9-11"></path></svg>
+    <svg class="floating-rune rune-2" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5l18 30M21 5L3 35"></path></svg>
+    <svg class="floating-rune rune-3" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 36V4M3 13l9-9 9 9"></path></svg>
+    <svg class="floating-rune rune-4" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 36V4l15 10L6 22"></path></svg>
+    <svg class="floating-rune rune-5" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20h18M12 4v32"></path></svg>
+    <svg class="floating-rune rune-6" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 32M20 4L4 36"></path></svg>
+  </div>
+
+  <!-- Wisp / Companion Multipli Intorno alla Card -->
+  <img src="assets/companions/bluethoot-animated.webp" class="companion-wisp wisp-1" alt="Bluetooth wisp">
+  <img src="assets/companions/gebo-animated.webp" class="companion-wisp wisp-2" alt="Gebo wisp">
+  <img src="assets/companions/algiz-animated.webp" class="companion-wisp wisp-3" alt="Algiz wisp">
+  <img src="assets/companions/tiwaz-animated.webp" class="companion-wisp wisp-4" alt="Tiwaz wisp">
+
+  <!-- Audio Magico -->
+  <audio id="magical-audio" preload="auto">
+    <source src="assets/musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Contenitore Principale -->
+  <div class="container">
+    <img src="assets/titolokl.png" alt="Whisper" class="logo">
+    
+    <h1>Enter Upland</h1>
+    <p>Join the Reader’s Guild. Enter your email to unlock the portal and access the site.</p>
+
+    <form id="guild-form">
+      <div class="form-group">
+        <input type="email" id="email-input" placeholder="Enter your email address" required autocomplete="email">
+      </div>
+      
+      <button type="submit" id="submit-btn" class="cta-button">Enter the Site ✦</button>
+    </form>
+
+    <div id="status-message"></div>
+    <p class="note">No spam. Unsubscribe at any time.</p>
+  </div>
+
+  <!-- Form MailerLite Nascosto -->
+  <div class="ml-embedded-hidden">
+    <div class="ml-embedded" data-form="vnS57Z"></div>
+  </div>
+
+  <script>
+    // --- GESTIONE COOKIE & REINDIRIZZAMENTO ---
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        let date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      let nameEQ = name + "=";
+      let ca = document.cookie.split(';');
+      for(let i=0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    // Se l'utente ha già il cookie, entra subito nel sito principale
+    window.addEventListener('DOMContentLoaded', () => {
+      if (getCookie('whisper_unlocked') === 'true') {
+        window.location.href = 'home/index.html'; // <--- CAMBIA QUI CON IL NOME DEL TUO SITO PRINCIPALE (es. home.html o index.html)
+      }
+    });
+
+    // --- AUDIO MAGICO AL TOCCO ---
+    document.addEventListener('click', function() {
+      const audio = document.getElementById('magical-audio');
+      if (audio && audio.paused) {
+        audio.volume = 0.3;
+        audio.play().catch(e => console.log("Audio preventito"));
+      }
+    }, { once: true });
+
+    // --- INVIO A MAILERLITE E SBLOCCO COOKIE ---
+    const customForm = document.getElementById('guild-form');
+    const customEmailInput = document.getElementById('email-input');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusMessage = document.getElementById('status-message');
+
+    customForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const emailValue = customEmailInput.value.trim();
+
+      if (!emailValue) return;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Opening portal...";
+      statusMessage.style.color = "var(--text-muted)";
+      statusMessage.textContent = "Joining the Guild...";
+
+      // Passa i dati al form nascosto di MailerLite
+      const mlEmailInput = document.querySelector('.ml-embedded input[type="email"]');
+      const mlSubmitButton = document.querySelector('.ml-embedded button[type="submit"], .ml-embedded input[type="submit"]');
+
+      if (mlEmailInput && mlSubmitButton) {
+        mlEmailInput.value = emailValue;
+        mlSubmitButton.click();
+      }
+
+      // Salva il cookie per 1 anno
+      setCookie('whisper_unlocked', 'true', 365);
+
+      statusMessage.style.color = "#10b981";
+      statusMessage.textContent = "Welcome to Upland!";
+
+      // Reindirizzamento al sito principale dopo 1 secondo
+      setTimeout(() => {
+        window.location.href = 'index.html'; // <--- CAMBIA QUI CON IL NOME DEL TUO SITO PRINCIPALE
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
