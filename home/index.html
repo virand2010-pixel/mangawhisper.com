@@ -19,14 +19,7 @@
 <body>
     <!-- Il resto del tuo HTML -->
 
-    <script>
-        document.addEventListener('click', function() {
-            const audio = document.getElementById('bg-music');
-            if (audio && audio.paused) {
-                audio.play().catch(error => console.log("Riproduzione bloccata dal browser:", error));
-            }
-        }, { once: true });
-    </script>
+
 
 
     <audio id="bg-music" loop="">
